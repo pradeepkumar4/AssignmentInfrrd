@@ -1,0 +1,84 @@
+.sidepanel  {
+    display: flex;
+    width: 0;
+    position: relative;
+    z-index: 1;
+    height: 250px;
+    top: 0;
+    left: 200px;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: flex;
+    transition: 0.3s;
+  }
+  
+  .sidepanel a:hover {
+    color: #f1f1f1;
+  }
+
+  .sidepanel .search-filters{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 15px;
+      width: 300px;
+      height: 100%;
+  }
+
+  .sidepanel .search-filters > div {
+        padding: 15px;
+        border: 1px solid lightgray;
+        height: 100px;
+  }
+
+  .sidepanel .search-filters > div select{
+    display: block;
+    height: 40px;
+    width: 100%;
+    border: none;
+}
+
+.sidepanel .footer{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px;
+    width: 300px;
+    height: 100%;
+}
+
+.sidepanel .footer .submit{     
+    background-color: rgb(30, 189, 133);
+    color: white;  
+    height: 40px;
+    width: 100px;
+    border: none;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 0.25em;
+}
+
+.sidepanel .footer .clear{    
+    background-color: white;
+    color: rgb(30, 189, 133);
+    height: 40px;
+    width: 100px;
+    border: none;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid rgb(30, 189, 133);
+    border-radius: 0.25em;
+}
+

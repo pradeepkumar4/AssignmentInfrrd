@@ -1,0 +1,86 @@
+<div class='employee-container'>
+    <div class="header">
+		<div class="notification">
+			<a href="#"><i class="fas fa-bell"></i></a>
+		</div>
+		<div class="team-dropdown">
+            <select [(ngModel)]="selectedOption" (change)="teamSelected($event)">
+                <option value="Choose Team">Choose Team</option>
+                <option *ngFor="let team of teams" value={{team}}>
+                    {{team}}
+                </option>
+            </select>
+		</div>
+    </div>
+	<div class="initial-panel">
+		<div class="length">
+			{{empDetails.length}} Results Found
+		</div>
+		<div class="bangalore-checkbox">
+			<input type="checkbox" id="bangaloreans" [(ngModel)]= "isChecked" (change)="onCheckboxChecked($event)">
+			<label for="bangaloreans">Show only Bangalore Employees</label><br><br>
+		</div>
+	</div>
+	<div class="employee" *ngFor="let item of empDetails; let i = index">
+		<div class="header-content">            
+			<img class="image-size" src="http://www.stevensegallery.com/1000/900">
+			<div class="name-designation">
+				<div class="fullname" style="font-weight: bold;">
+					{{ item.fullName }}
+				</div>
+				<div class="designation">
+					{{ item.designation }}
+				</div>
+			</div>
+			<div class="send-message">
+				<a href="#"><i class="fas fa-paper-plane"></i></a>
+			</div>
+		</div>
+		<div class="header-rating-content">      
+			<div class="star-rating">
+				{{ item.rating }} Rating
+			</div>
+			<div class="star-rating">
+				<div class="full-star" [style.width]="item.rating*20 + '%' "></div>
+				<div class="empty-star"> </div>
+			</div>
+		</div>
+		<div class="exp-doj">
+			<div class="experience">
+				Experience:
+				<div style="font-weight: bold;display: inline">
+					{{ item.exp }} years
+				</div>
+			</div>
+			<div class="doj">
+				Date Of Joining:
+				<div style="font-weight: bold;display: inline">
+					{{ item.doj }}
+				</div>
+			</div>
+		</div>
+		<div class="team">
+			Current Team: 
+			<div style="font-weight: bold;display: inline">
+				{{ item.team }}
+			</div>
+		</div>
+		<div class="manager">
+			Reporting Manager:
+			<div style="font-weight: bold;display: inline">
+				{{ item.manager }}
+			</div>
+		</div>
+		<div class="contacts">
+			<div class="mobile">
+				<i class="fa fa-phone"></i>
+				{{ item.phone }}
+			</div>
+			<div class="email">
+				<i class="fa fa-envelope"></i>
+				{{ item.email }}
+			</div>
+		</div>        
+	</div>
+</div>
+

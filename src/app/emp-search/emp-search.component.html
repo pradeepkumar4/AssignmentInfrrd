@@ -1,0 +1,60 @@
+<div id="mySidepanel" class="sidepanel">
+    <div class="search-filters">
+        <div>
+            <label>Department</label>
+            <select [(ngModel)]="selectedDepartment" (change)="departmentSelected($event)">
+                <option *ngFor="let department of departments" value={{department}}>
+                    {{department}}
+                </option>
+            </select>
+        </div>
+        <div>
+            <label>Role Type</label>
+            <select [(ngModel)]="selectedRoleType" (change)="roleTypeSelected($event)">
+                <option *ngFor="let roleType of roleTypes" value={{roleType}}>
+                    {{roleType}}
+                </option>
+            </select>
+        </div>
+        <div>
+            <label>Experience</label>
+            <select [(ngModel)]="selectedExperience" (change)="experienceSelected($event)">
+                <option *ngFor="let experience of experiences" value={{experience}}>
+                    {{experience}}
+                </option>
+            </select>
+        </div>
+        <div>
+            <label>Year Of Joining</label>
+            <select [(ngModel)]="selectedYearOfJoining" (change)="yearOfJoiningSelected($event)">
+                <option *ngFor="let year of years" value={{year}}>
+                    {{year}}
+                </option>
+            </select>
+        </div>
+        <div>
+            <label>Location</label>
+            <select [(ngModel)]="selectedLocation" (change)="locationSelected($event)">
+                <option *ngFor="let location of locations" value={{location}}>
+                    {{location}}
+                </option>
+            </select>
+        </div>
+        <div>
+            <label>Team</label>
+            <select [(ngModel)]="selectedTeam" (change)="teamSelected($event)">
+                <option *ngFor="let team of teams" value={{team}}>
+                    {{team}}
+                </option>
+            </select>
+        </div>
+    </div>
+    <div class="footer">
+        <div>
+            <button class="clear" (click)="onClearButtonClick($event)">Clear</button>
+        </div>
+        <div>
+            <button class="submit" (click)="onSubmitButtonClick($event)">Button</button>
+        </div>
+    </div>
+</div>
