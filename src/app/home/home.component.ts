@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
      }
 
     filterEmployeesWithTeam(team) {
-        if (team === "Not Selected") {
+        if (team === "Choose Team") {
             this.empDetails = employeeDetail;
         } else {
             this.empDetails = employeeDetail.filter(item => {return item["team"].toLowerCase() === team.toLowerCase()});
