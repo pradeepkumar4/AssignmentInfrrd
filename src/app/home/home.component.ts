@@ -15,7 +15,9 @@ export class HomeComponent implements OnInit {
     selectedOption: string = "Choose Team";
     isChecked: boolean;
     state$: Observable<object>;
+    rating: number;
     routedData: any;
+    //starList: boolean[] = [true,true,true,true,true];
 
     constructor(public activatedRoute: ActivatedRoute, private router: Router) {
         this.routedData = this.router.getCurrentNavigation().extras.state;
@@ -23,7 +25,6 @@ export class HomeComponent implements OnInit {
 
     ngOnInit() {
         this.empDetails = (this.routedData && this.routedData.filteredEmpData) || employeeDetail;
-        console.log(this.empDetails);
      }
 
     filterEmployeesWithTeam(team) {
@@ -32,7 +33,6 @@ export class HomeComponent implements OnInit {
         } else {
             this.empDetails = employeeDetail.filter(item => {return item["team"].toLowerCase() === team.toLowerCase()});
             if (this.isChecked) {
-                console.log(this.isChecked);
                 this.empDetails = this.empDetails.filter(item => {return item["location"].toLowerCase().includes("Bangalore".toLowerCase())});
             }
         }
@@ -40,7 +40,6 @@ export class HomeComponent implements OnInit {
     }
 
     teamSelected (e) {
-        console.log("done");
         let selectedTeam = e.target.value;
         this.selectedOption = selectedTeam;
         const filteredEmployees: emp[] = (selectedTeam == "Choose Team") ? this.filterEmployeesWithTeam("Not Selected"): this.filterEmployeesWithTeam(selectedTeam);
@@ -60,4 +59,14 @@ export class HomeComponent implements OnInit {
         }
     }
 
+    // setStar(e, data:any){
+    //     this.rating = data + 1;
+    //     for (var i = 0 ; i <= 4; i++){
+    //         if (i <= data){
+    //             this.starList[i] = false;
+    //         } else{
+    //             this.starList[i] = true;
+    //         }
+    //     }
+    // }
 }

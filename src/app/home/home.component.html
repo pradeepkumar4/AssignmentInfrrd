@@ -36,7 +36,15 @@
 				<a href="#"><i class="fas fa-paper-plane"></i></a>
 			</div>
 		</div>
-		<div class="header-rating-content">      
+		<div class="header-rating-content">
+			<!-- <div class="star-rating">
+				{{ rating }} Rating
+			</div>
+			<div class="star-rating">
+				<a *ngFor="let item of starList; let i=index " (click)="setStar($event, i)">  
+					<i class="fa" [ngClass]="{'fa-star-o':item,'fa-star':!item}"></i>   
+				</a> 
+			</div> -->
 			<div class="star-rating">
 				{{ item.rating }} Rating
 			</div>
